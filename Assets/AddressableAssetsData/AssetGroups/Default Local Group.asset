@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e85cc00c3d0947d4d9d4a6bcf66b3050
+  m_SerializeEntries:
+  - m_GUID: dd1c1858b19c70c40b20b760ff191d81
+    m_Address: InteractionUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b448ace6eca604443981eb5911941644
+    m_Address: Map_20001010
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 77e525d962513e84a8b1071a2383afab
+    m_Address: Map_20001020
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dad9ec65854010e4485b5f7823d8548b
+    m_Address: NPC_10001001
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7152102a6ea1c4a4b83b705229ad1cc5
+    m_Address: Player
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7819b5bae17a886468bd65a80ace6da0
+    m_Address: FadeOut
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 77b3550fcf49c7e48a23c151cc29cd16
+    m_Address: TriggerEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3229ac05160e381489d7accc3864fff4
+    m_Address: LetterBox
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4ff0ce5f9f577bf4e9b9144256a568c2
+    m_Address: NPC_10001002
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: deca6fabb87cba54eaad34a13fed6be0
+    m_Address: LetterBox
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 47d1182c2f9f2c849baafcf11120a373, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 757cf63b0c5e9ca44899e352742e7129, type: 2}
+    - {fileID: 11400000, guid: e93a3989bf83a594c9d0cc870c4cd2ad, type: 2}

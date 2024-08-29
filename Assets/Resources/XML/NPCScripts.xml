@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<mapID name="20001010">
+		<trigID name="40001011">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>이제 오른쪽 맵에가서 대화를 해보세요</kr>
+			</script>
+		</trigID>
+	</mapID>
+
+	<mapID name="20001010">
+		<trigID name="40001021">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>모든 컷신을 확인하셨군요. 이것으로 데모는 마무리입니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	
+	<mapID name ="20001020">
+		<trigID name ="">
+			<script>
+				<NPCID>10001002</NPCID>
+				<kr>이곳에 오기 전에 왼쪽 맵에서 대화를 마무리하세요</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name ="20001020">
+		<trigID name ="">
+			<script>
+				<NPCID>10001002</NPCID>
+				<kr>아직 왼쪽 맵에서 대화를 마무리하지 않으셨네요</kr>
+			</script>
+		</trigID>"
+	</mapID>
+	<mapID name ="20001020">
+		<trigID name ="">
+			<script>
+				<NPCID>10001002</NPCID>
+				<kr>언제까지 저와 대화하실거죠? 데모를 확인하려면 왼쪽맵에서 대화하고 오세요</kr>
+			</script>
+		</trigID>"
+	</mapID>
+	<mapID name="20001020">
+		<trigID name="">
+			<script>
+				<NPCID>10001002</NPCID>
+				<kr>시간이 많으신가보네요. 어쩔수 없네요. 당신이 버틸 수 있을 때까지 있어볼까요?</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001020">
+		<trigID name="">
+			<script>
+				<NPCID>10001002</NPCID>
+				<kr>#JunctionActivate.80000001</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001020">
+		<trigID name="">
+			<script>
+				<NPCID>10001002</NPCID>
+				<kr>(이하 반복)</kr>
+			</script>
+		</trigID>
+	</mapID>
+
+
+
+	<mapID name="20001020">
+		<trigID name="40001021">
+			<script>
+				<NPCID>10001002</NPCID>
+				<kr>모든 컷신을 확인하셨군요. 이것으로 데모는 마무리입니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+</Root>

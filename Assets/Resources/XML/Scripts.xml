@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<mapID name="20001010">
+		<trigID name="40001011">
+			<script>
+				<startNPC>10001001</startNPC>
+				<NPCID>10001001</NPCID>
+				<kr>오셨군요</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001010">
+		<trigID name="40001011">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>여기는 2D 플랫포머 오픈 필드 스크립트 데모입니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001010">
+		<trigID name="40001011">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>해당 컷신이 완료되면 오른쪽 방에서 다음 컷신을 확인 하실 수 있습니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001010">
+		<trigID name="40001011">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>만약 해당 컷신을 확인하지 않고 오른쪽 방에 가게 되면 다음 컷신을 확인할 수 없으며, 해당 컷신을 확인해야만 진행할 수 있습니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001010">
+		<trigID name="40001011">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>이제 오른쪽 방에 가서 다음 컷신을 진행 할 수 있습니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+
+	<mapID name="20001020">
+		<trigID name="40001021">
+			<script>
+				<startNPC>10001002</startNPC>
+				<NPCID>10001002</NPCID>
+				<kr>오셨군요</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001020">
+		<trigID name="40001021">
+			<script>
+				<junctionID>80000001</junctionID>
+				<NPCID>10001002</NPCID>
+				<kr>그러게 진행하기 전에는 저랑 대화해봤자 의미가 없다니깐요?</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001020">
+		<trigID name="40001021">
+			<script>
+				<NPCID>10001002</NPCID>
+				<kr>이것으로 2D 플랫포머 오픈필드 스크립트 관련 데모는 마무리되었습니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001020">
+		<trigID name="40001021">
+			<script>
+				<NPCID>10001002</NPCID>
+				<kr>이 대화 이후 변화하는 스크립트도 있으니 컷신 이후 확인하실 수 있습니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+</Root>
