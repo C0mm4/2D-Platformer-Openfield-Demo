@@ -115,7 +115,7 @@ MonoBehaviour:
   text: 
   isSaying: 0
   sayingIndex: 0
-  sayingDelay: 0
+  sayingDelay: 0.04
   nextSayDelay: 0
   letterBox: {fileID: 0}
   animator: {fileID: 0}
@@ -123,6 +123,7 @@ MonoBehaviour:
   npcId: 10001002
   scripts: []
   scriptIndex: 0
+  SaveScripts: []
   sayTrigger: {fileID: 0}
   triggerEffect: {fileID: 0}
   sayN: 0

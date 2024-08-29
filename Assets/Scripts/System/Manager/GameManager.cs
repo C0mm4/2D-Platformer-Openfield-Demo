@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     SceneManager _sceneManager = new SceneManager();
     public static SceneManager Scene { get { return gm_Instance._sceneManager; } }
 
-    CameraManager _cameraManager = new CameraManager();
+    CameraManager _cameraManager;
     public static CameraManager CameraManager { get { return gm_Instance._cameraManager; } }
     [SerializeField]
     GameProgress _gameProgress;
