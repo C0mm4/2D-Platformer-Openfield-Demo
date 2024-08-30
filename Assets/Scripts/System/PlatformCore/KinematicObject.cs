@@ -1,3 +1,4 @@
+using System.Buffers.Text;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -53,13 +54,15 @@ public class KinematicObject : MonoBehaviour
     {
         if (body != null)
         {
-
+            // If the object is affected by gravity
             if (gravityModifier > 0f)
             {
+                // object is falling
                 if (velocity.y < 0)
                 {
                     velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
                 }
+                // object move up
                 else
                 {
                     velocity += Physics2D.gravity * Time.deltaTime;
@@ -74,15 +77,18 @@ public class KinematicObject : MonoBehaviour
 
             isGrounded = false;
 
-            // Calculate Movement
+            // Normalizing moving force for X axis
             var deltaPos = velocity * Time.deltaTime;
             var moveAlongGround = new Vector2(groundNormal.y, -groundNormal.x);
             var move = moveAlongGround * deltaPos.x;
 
+            // Calculate object next position for X axis
             PerformMovement(move, false);
 
+            // Normalizing moving force for Y axis
             move = Vector2.up * deltaPos.y;
 
+            // Calculate object next position for Y axis
             PerformMovement(move, true);
 
             // Reset External Force
@@ -91,6 +97,7 @@ public class KinematicObject : MonoBehaviour
             // Decay External Force
             DecayAdditionalVelocity();
 
+            // Flip sprite according to sawDir
             FlipX();
         }
     }
@@ -105,6 +112,7 @@ public class KinematicObject : MonoBehaviour
 
             for (int i = 0; i < cnt; i++)
             {
+                // collider is trigger check, collision ignore
                 if (hitBuffer[i].collider.isTrigger)
                 {
                     continue;
@@ -127,6 +135,7 @@ public class KinematicObject : MonoBehaviour
                     velocity.y = Mathf.Min(velocity.y, 0);
                 }
 
+                // Adjust velocity based on the slope of the ground
                 if (isGrounded)
                 {
                     var projection = Vector2.Dot(velocity, currentNormal);
@@ -136,9 +145,12 @@ public class KinematicObject : MonoBehaviour
                     }
                 }
 
+                // calculate target position
                 var modifiedDistance = hitBuffer[i].distance - shellRadius;
                 distance = modifiedDistance < distance ? modifiedDistance : distance;
             }
+
+            // object set position
             var moveDistance = dir.normalized * distance;
             body.position += moveDistance;
         }
@@ -178,60 +190,6 @@ public class KinematicObject : MonoBehaviour
             transform.localRotation = new Quaternion(0, 180, 0, 0);
         }
 
-    }
-
-    public async Task ForceMove(Vector3 position, bool isReturn = true)
-    {
-        isForceMoving = true;
-        targetMovePos = position;
-        Vector2 prevSawDir = targetMovePos - transform.position;
-        sawDir = prevSawDir;
-
-        while (Mathf.Abs(position.x - transform.position.x) > 0.05f)
-        {
-            await Task.Yield();
-        }
-        isForceMoving = false;
-        if (isReturn)
-        {
-            if (prevSawDir.x > 0)
-            {
-                sawDir = Vector2.left;
-            }
-            else
-            {
-                sawDir = Vector2.right;
-            }
-        }
-        else
-        {
-            if (prevSawDir.x > 0)
-            {
-                sawDir = Vector2.right;
-            }
-            else
-            {
-                sawDir = Vector2.left;
-            }
-        }
-        velocity = Vector2.zero;
-        canMove = false;
-    }
-
-
-    public async Task ForceMoveBack(Vector3 position, bool isReturn = false)
-    {
-        isForceMoving = true;
-        targetMovePos = position;
-        Debug.Log("Backword");
-        Debug.Log(sawDir);
-        while (Mathf.Abs(position.x - transform.position.x) > 0.05f)
-        {
-            await Task.Yield();
-        }
-        isForceMoving = false;
-        velocity = Vector2.zero;
-        canMove = false;
     }
 
 }

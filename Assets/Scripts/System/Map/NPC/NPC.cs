@@ -309,10 +309,12 @@ public class NPC : InteractionTrigger
     {
         base.Interaction();
         Trigger trig = CheckTriggerStart();
+        // if exists trigger start to this NPC, Trigger Activate
         if (trig != null)
         {
             await trig.TriggerActive();
         }
+        // Saying script
         else
         {
             ChangeUIState(UIState.CutScene);
@@ -345,6 +347,7 @@ public class NPC : InteractionTrigger
         }
     }
 
+    // Set Scripts according by Activate Trigger Data
     public void SetScripts()
     {
         foreach (NPCSetScript scriptData in SaveScripts)
@@ -363,6 +366,7 @@ public class NPC : InteractionTrigger
         }
     }
 
+    // Method to find a trigger that starts with an interaction with an NPC
     private Trigger CheckTriggerStart()
     {
         foreach (Trigger trig in Stage.currentMapTrigger)

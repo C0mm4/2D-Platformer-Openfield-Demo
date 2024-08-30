@@ -21,7 +21,6 @@ public class StageController
 
     public void LoadMap(string mapId)
     {
-
         GameObject go = GameManager.InstantiateAsync("Map_"+mapId);
         currentMap = go.GetComponent<Map>();
         currentMap.CreateHandler();
@@ -34,6 +33,8 @@ public class StageController
         currentMapTrigTexts = GameManager.Script.getMapTrigTextData(mapId);
         Trigger[] triggers = go.GetComponentsInChildren<Trigger>();
         currentMapTrigger = new();
+
+        // Search current Map Trigger Objects, and Set Data
         foreach (Trigger trig in triggers)
         {
             if (!trig.data.id.Equals("SpawnTrigger"))
@@ -104,7 +105,10 @@ public class StageController
 
     public void DoorActivate(string id)
     {
-        GameManager.Progress.openDoors.Add(id);
+        if (!GameManager.Progress.openDoors.Contains(id))
+        {
+            GameManager.Progress.openDoors.Add(id);
+        }
         var doors = currentMap.GetComponentsInChildren<Door>().ToList();
         Door targetDoor = doors.Find(item => item.id == id);
         if (targetDoor != null)

@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro.EditorUtilities;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -108,6 +106,7 @@ public class GameManager : MonoBehaviour
 
         script = Script;
 
+        Screen.SetResolution(1920, 1080, false);
         await Scene.MoveMap("20001010", "30001011");
     }
 

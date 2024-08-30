@@ -5,33 +5,20 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-// 리소스의 Load, Instantiate, Destroy 를 관리하는 리소스 매니저. 
+// Resource Manager. Doing load resource, destroy object, save load resource handle
 public class ResourceManager
 {
+    // Save Resource Handle with string Dictionary
     private Dictionary<string, AsyncOperationHandle> LoadResources = new();
-    // path에 있느 파일을 로드하는 함수, 로드되는 조건은 Object 일 때
+
+    // Load Object with object path
     public T Load<T>(string path) where T : UnityEngine.Object
     {
         return Resources.Load<T>(path);
     }
 
-    // Load Game Object by GameObject instance
-    public GameObject Instantiate(GameObject gameObject)
-    {
-        GameObject prefab = UnityEngine.Object.Instantiate(gameObject);
-        if (prefab != null)
-        {
-            return prefab;
-        }
-        else
-        {
-            Debug.Log($"Failed to load Prefab : {gameObject.name}");
-            return null;
-        }
-    }
-
     // Load Game Object by GameObject Instance, and Setting position and rotation
-    public GameObject Instantiate(GameObject gameObject, Vector3 pos, Quaternion rotation)
+    public GameObject Instantiate(GameObject gameObject, Vector3 pos = default, Quaternion rotation = default)
     {
         GameObject prefab = UnityEngine.Object.Instantiate(gameObject, pos, rotation);
         if (prefab != null)
@@ -57,16 +44,19 @@ public class ResourceManager
         else
         {
             var op = LoadAssetAsync<GameObject>(path);
+            // Object Load Successfully, Save Load Resources Handle
             if (!op.Equals(default))
             {
                 LoadResources[path] = op;
             }
+            // Load resource saved successfully, Instantiate Object
             if (LoadResources.ContainsKey(path))
             {
                 GameObject go = Instantiate((GameObject)LoadResources[path].Result, pos, rotation);
                 return go;
 
             }
+            // Load resource save failed, print debug log
             else
             {
                 Debug.Log($"Failed to load GameObject : {path}");
@@ -78,12 +68,14 @@ public class ResourceManager
     // Load Addressables Asset by Addressables path
     public AsyncOperationHandle LoadAssetAsync<T>(string path) where T : UnityEngine.Object
     {
+        // Resource is already saved, return save resource handle
         if (LoadResources.ContainsKey(path))
         {
             return LoadResources[path];
         }
         else
         {
+            // Try Addressable Asset Load with string path. if path is not exists, return default handle
             try
             {
                 var op = Addressables.LoadAssetAsync<T>(path);

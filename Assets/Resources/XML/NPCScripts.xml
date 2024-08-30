@@ -8,7 +8,6 @@
 			</script>
 		</trigID>
 	</mapID>
-
 	<mapID name="20001010">
 		<trigID name="40001021">
 			<script>
@@ -17,6 +16,71 @@
 			</script>
 		</trigID>
 	</mapID>
+	<mapID name="20001010">
+		<trigID name="40001021">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>#JunctionActivate.80000002</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001010">
+		<trigID name="40001021">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>해당 스크립트를 재생하셨다면 히든 트리거를 발생하는 분기를 발생시킵니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001010">
+		<trigID name="40001012">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>이제 진짜 데모가 완료되었습니다. 감사합니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001010">
+		<trigID name="40001012">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>이제 프로그램을 종료하셔도 좋습니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001010">
+		<trigID name="40001012">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>저기... 진짜 끝났다니깐요?</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001010">
+		<trigID name="40001012">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>진짜 안가실 건가요?</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001010">
+		<trigID name="40001012">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>#JunctionActivate.80000003</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001010">
+		<trigID name="40001012">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>어쩔 수 없네요. 오른쪽 방으로 가보세요 뭔가가 바뀔 겁니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	
 	
 	<mapID name ="20001020">
 		<trigID name ="">
@@ -62,12 +126,18 @@
 		<trigID name="">
 			<script>
 				<NPCID>10001002</NPCID>
+				<kr>분기 활성화</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001020">
+		<trigID name="">
+			<script>
+				<NPCID>10001002</NPCID>
 				<kr>(이하 반복)</kr>
 			</script>
 		</trigID>
 	</mapID>
-
-
 
 	<mapID name="20001020">
 		<trigID name="40001021">
@@ -77,4 +147,15 @@
 			</script>
 		</trigID>
 	</mapID>
+	<mapID name="20001020">
+		<trigID name="40001022">
+			<script>
+				<NPCID>10001002</NPCID>
+				<kr>이제 당신은 저와 영원히 함께하는 거에요</kr>
+			</script>
+		</trigID>
+	</mapID>
+
+
+
 </Root>

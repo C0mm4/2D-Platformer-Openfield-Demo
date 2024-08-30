@@ -41,13 +41,38 @@
 			</script>
 		</trigID>
 	</mapID>
-
+	<mapID name="20001010">
+		<trigID name="40001012">
+			<script>
+				<startNPC>10001001</startNPC>
+				<NPCID>10001001</NPCID>
+				<kr>히든 트리거를 작동하는 분기가 발생되어 해당 트리거가 나타납니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001010">
+		<trigID name="40001012">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>이렇게 플레이어의 상호작용에 따라 스크립트를 컨트롤 할 수 있습니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001010">
+		<trigID name="40001012">
+			<script>
+				<NPCID>10001001</NPCID>
+				<kr>이것으로 진짜 데모를 마칩니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	
 	<mapID name="20001020">
 		<trigID name="40001021">
 			<script>
 				<startNPC>10001002</startNPC>
 				<NPCID>10001002</NPCID>
-				<kr>오셨군요</kr>
+				<kr>현재 트리거는 이전 트리거를 활성화 해야 활성화 되는 트리거입니다.</kr>
 			</script>
 		</trigID>
 	</mapID>
@@ -56,7 +81,16 @@
 			<script>
 				<junctionID>80000001</junctionID>
 				<NPCID>10001002</NPCID>
-				<kr>그러게 진행하기 전에는 저랑 대화해봤자 의미가 없다니깐요?</kr>
+				<kr>당신은 이전 트리거를 작동시키기 전에 저에게 말을 자주 거셨군요?</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001020">
+		<trigID name="40001021">
+			<script>
+				<junctionID>80000001</junctionID>
+				<NPCID>10001002</NPCID>
+				<kr>해당 텍스트는 해당 분기를 만족해야만 재생되는 스크립트입니다.</kr>
 			</script>
 		</trigID>
 	</mapID>
@@ -73,6 +107,46 @@
 			<script>
 				<NPCID>10001002</NPCID>
 				<kr>이 대화 이후 변화하는 스크립트도 있으니 컷신 이후 확인하실 수 있습니다.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001020">
+		<trigID name="40001022">
+			<script>
+				<NPCID>10001002</NPCID>
+				<kr>결국 여기까지 도달하신 거군요.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001020">
+		<trigID name="40001022">
+			<script>
+				<NPCID>99000000</NPCID>
+				<kr>#DoorClose.30001021</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001020">
+		<trigID name="40001022">
+			<script>
+				<NPCID>10001002</NPCID>
+				<kr>어쩔 수 없네요. 한가하신 거 같으니 저랑 함께하기로 해요.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001020">
+		<trigID name="40001022">
+			<script>
+				<NPCID>10001002</NPCID>
+				<kr>옆으로 가는 문을 잠궜어요.</kr>
+			</script>
+		</trigID>
+	</mapID>
+	<mapID name="20001020">
+		<trigID name="40001022">
+			<script>
+				<NPCID>10001002</NPCID>
+				<kr>이제 당신은 저와 영원히 함께하는 거에요</kr>
 			</script>
 		</trigID>
 	</mapID>

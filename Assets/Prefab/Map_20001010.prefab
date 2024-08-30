@@ -928,6 +928,7 @@ Transform:
   - {fileID: 2617989853874558825}
   - {fileID: 2617989852856839381}
   - {fileID: 4056819139770191917}
+  - {fileID: 254294190709607994}
   - {fileID: 2472489384793820099}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -958,6 +959,96 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bound: {fileID: 2617989853874558824}
   NPCs: []
+--- !u!1 &3151929021446884359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 254294190709607994}
+  - component: {fileID: 6772731750396938792}
+  - component: {fileID: 372967618081722963}
+  m_Layer: 0
+  m_Name: Trigger_40001012
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &254294190709607994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3151929021446884359}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3, y: -0.6799998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2617989854692281815}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6772731750396938792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3151929021446884359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9aa2bee61f41bc439a4b61354e2a08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeIds: []
+  data:
+    id: 40001012
+    isActivate: 0
+    startNPCId: 
+  SelectIndex: 0
+  trigText:
+    trigId: 
+    scripts: []
+  nextTriggerId: []
+  nextTrigger: []
+  conditionObjs: []
+  spawnObjs: []
+  condi:
+    condition: 1
+    junctionNodes:
+    - 80000002
+    HPRatio: 0
+    originTrigger: {fileID: 6772731750396938792}
+--- !u!61 &372967618081722963
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3151929021446884359}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &9182248104344763618
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,7 +1061,7 @@ GameObject:
   - component: {fileID: 2374840987886018435}
   - component: {fileID: 8361830413042146935}
   m_Layer: 0
-  m_Name: Trigger
+  m_Name: Trigger_40001011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1018,8 +1109,9 @@ MonoBehaviour:
   spawnObjs: []
   condi:
     condition: 0
+    junctionNodes: []
     HPRatio: 0
-    originTrigger: {fileID: 0}
+    originTrigger: {fileID: 2374840987886018435}
 --- !u!61 &8361830413042146935
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1055,7 +1147,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6340222775492799544, guid: dad9ec65854010e4485b5f7823d8548b, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6340222775492799544, guid: dad9ec65854010e4485b5f7823d8548b, type: 3}
       propertyPath: m_LocalPosition.x

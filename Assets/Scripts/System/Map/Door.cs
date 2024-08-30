@@ -15,7 +15,7 @@ public class Door : InteractionTrigger
     public override void Awake()
     {
         base.Awake();
-        text = "이동한다";
+        // is Door Activate, player Detect distance set
         if (isActivate)
         {
             detectDistance = 1f;
@@ -25,10 +25,12 @@ public class Door : InteractionTrigger
     public override void Update()
     {
         base.Update();
+        // is Door Activate, player Detect distance set
         if (isActivate)
         {
             detectDistance = 1f;
         }
+        // if Door is not activate, player Detect distance is 0
         else
         {
             detectDistance = 0f;
@@ -37,6 +39,7 @@ public class Door : InteractionTrigger
 
     public override async void Interaction()
     {
+        // Door is Activate, Move Map
         if (isActivate)
         {
             base.Interaction();

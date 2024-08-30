@@ -24,6 +24,8 @@ public class CutSceneTrigger : Trigger
         GameManager.ChangeUIState(GameManager.UIState.CutScene);
         player.canMove = false;
 
+        GameManager.UIManager.DeleteInteractionUI();
+
         await ScriptPlay();
         
 

@@ -32,11 +32,13 @@ public abstract class Trigger : MonoBehaviour
         [SerializeField]
         enum condiType
         {
-            None, // Add More Conditions
+            None, Junction, // Add More Conditions
         };
 
         [SerializeField]
         condiType condition;
+        [SerializeField]
+        List<string> junctionNodes;
 
         [SerializeField]
         float HPRatio;
@@ -48,11 +50,23 @@ public abstract class Trigger : MonoBehaviour
             switch (condition)
             {
                 case condiType.None: return true;
+                case condiType.Junction: return CheckJunction();
                 // Add More Condition Return
                 default: return true;
             }
         }
 
+        private bool CheckJunction()
+        {
+            foreach(string junction in junctionNodes)
+            {
+                if(GameManager.Progress.activateJunctions.FindIndex(item => item.Equals(junction)) == -1)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
     [SerializeField]
     AdditionalCondi condi;
@@ -80,16 +94,22 @@ public abstract class Trigger : MonoBehaviour
 
     public async virtual void OnTriggerStay2D(Collider2D collision)
     {
+        // if Trigger start NPC data isn't exists
         if (data.startNPCId.Equals(""))
         {
+            // if Player Collision
             if (collision.gameObject == GameManager.player)
             {
+                // if GameState is In Play
                 if (GameManager.GetUIState() == GameManager.UIState.InPlay)
                 {
+                    // is not already activate this trigger
                     if (!data.isActivate)
                     {
+                        // node trigger is not exists
                         if (nodeIds.Count == 0)
                         {
+                            // Check this trigger condition
                             if (condi.CheckCondi())
                             {
                                 await TriggerActive();
@@ -97,6 +117,7 @@ public abstract class Trigger : MonoBehaviour
                         }
                         else
                         {
+                            // node trigger is all activate, and check this trigger condition
                             if (CheckNodesActive())
                             {
                                 await TriggerActive();
@@ -112,13 +133,10 @@ public abstract class Trigger : MonoBehaviour
 
     public virtual async Task TriggerActive()
     {
+        GameManager.Trigger.ActiveTrigger(data);
         await Action();
 
-        await Task.Run(() =>
-        {
-            GameManager.Trigger.ActiveTrigger(data);
-        });
-
+        // Refresh NPC Scripts end Triggers
         GameManager.Stage.RefreshNPCScript();
     }
 
