@@ -36,12 +36,14 @@ public class LetterBox : MonoBehaviour
 
     public void LateUpdate()
     {
+        // Letter Box Resize
         MiddleLetterBox.GetComponent<RectTransform>().sizeDelta = new Vector2(MiddleLetterBox.GetComponent<RectTransform>().sizeDelta.x, txt.preferredHeight);
         TopLetterBox.GetComponent<RectTransform>().localPosition = new Vector2(TopLetterBox.GetComponent<RectTransform>().localPosition.x, MiddleLetterBox.GetComponent<RectTransform>().sizeDelta.y + 100f);
     }
 
     public void SetPosition()
     {
+        // set letterbox position on canvas screen
         var screenPosition = GameManager.CameraManager.maincamera.WorldToScreenPoint(npc.transform.position);
 
         Vector2 localPoint;

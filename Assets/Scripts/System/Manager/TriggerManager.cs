@@ -8,13 +8,13 @@ public class TriggerManager
     {
 
     }
-
+    
     public void ActiveTrigger(TriggerData trig)
     {
+        // Add activated trigger data in gameprogress
         GameManager.Progress.activeTrigs[trig.id] = trig;
 
-        trig.isActivate = true;
-
-        Debug.Log(GameManager.Progress.activeTrigs.Count);
+        // trigger data isActivate is true
+        trig.isActivate = true;        
     }
 }

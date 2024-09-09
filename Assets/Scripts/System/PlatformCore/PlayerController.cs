@@ -48,7 +48,6 @@ public class PlayerController : KinematicObject
 
             if (GetUIState() == UIState.InPlay)
             {
-                // Calculate Skill CoolTime
 
 
                 // Interaction UI Generate

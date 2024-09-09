@@ -21,21 +21,12 @@ public class Map : MonoBehaviour
 
     public void SetTriggerDatas()
     {
+        // Find Trigger Objects
         Trigger[] triggers = GetComponentsInChildren<Trigger>();
 
-        foreach (var trigger in triggers)
-        {
-            foreach (string nextId in trigger.nextTriggerId)
-            {
-                foreach (var trig2 in triggers)
-                {
-                    if (trig2.data.id.Equals(nextId))
-                    {
-                        trigger.nextTrigger.Add(trig2);
-                    }
-                }
-            }
-        }
+        // Add your Trigger Data Set
+
+
     }
 
 }

@@ -8,7 +8,7 @@ using UnityEngine;
 
 public static class Func
 {
-
+    // Set gameobject Rect Transform
     public static void SetRectTransform(GameObject go, Vector3 pos = default)
     {
         RectTransform rt = go.GetComponent<RectTransform>();
@@ -16,40 +16,8 @@ public static class Func
         rt.transform.localScale = Vector3.one;
         rt.transform.localPosition = pos;
     }
-
-    public static string ChangeStringToValue(string txt)
-    {
-        string pattern = @"\{(?<varName>.+?)\}";
-
-        string ret = txt;
-
-        MatchCollection matches = Regex.Matches(ret, pattern);
-
-        foreach (Match match in matches)
-        {
-            string varName = match.Groups["varName"].Value;
-
-            string value = GetValueFromVariableName(varName);
-
-            ret = ret.Replace(match.Value, value);
-        }
-
-        return ret;
-    }
-
-    static string GetValueFromVariableName(string varName)
-    {
-        if (varName == "GameManager.Input._keySettings.Call")
-        {
-            return "F";
-        }
-        else
-        {
-            return $"Unknown variable: {varName}";
-        }
-    }
-
-
+    
+    // Script Action Function
     public static async Task Action(string action, bool isScene = true)
     {
         action = action.TrimStart('#');
@@ -105,6 +73,8 @@ public static class Func
             }
         }
     }
+
+    // Find NPC
     public static NPC FindNPC(string id, string spawnP = null)
     {
         List<NPC> npcs = GameManager.Stage.currentMap.GetComponentsInChildren<NPC>().ToList();

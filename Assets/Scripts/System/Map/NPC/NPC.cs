@@ -18,8 +18,6 @@ public class NPC : InteractionTrigger
     public float nextSayDelay;
     public GameObject letterBox;
 
-    public Animator animator;
-    public Animator glasses;
 
     public string npcId;
 
@@ -111,7 +109,7 @@ public class NPC : InteractionTrigger
     }
 
 
-
+    // NPC say with interaction
     public async Task Say()
     {
 
@@ -184,7 +182,7 @@ public class NPC : InteractionTrigger
 
     }
 
-
+    // NPC say with trigger data
     public async Task Say(string script)
     {
         int currentSayN = ++sayN;
@@ -288,21 +286,6 @@ public class NPC : InteractionTrigger
         await Task.Delay(TimeSpan.FromSeconds(nextSayDelay));
 
 
-    }
-    public async Task Action(string action)
-    {
-        switch (action.Split('.')[0])
-        {
-            case "#Delay":
-                Debug.Log(action.Split('.')[1]);
-                await Task.Delay(TimeSpan.FromMilliseconds(float.Parse(action.Split('.')[1].Trim())));
-                break;
-            case "Camera":
-                break;
-            case "Spawn":
-                break;
-
-        }
     }
 
     public override async void Interaction()

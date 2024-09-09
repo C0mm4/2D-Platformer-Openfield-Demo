@@ -47,12 +47,12 @@ public class ScriptManager
             script.script = trigData["script"]["kr"].InnerText;
             if (trigData["script"]["isAwait"] != null)
             {
-                script.isAwait = true;
+                script.isAwait = false;
                 script.delayT = float.Parse(trigData["script"]["delayT"].InnerText);
             }
             else
             {
-                script.isAwait = false;
+                script.isAwait = true;
             }
 
             if (trigData["script"]["junctionID"] != null)

@@ -18,16 +18,20 @@ public class StageController
     public int changeSlot = 0;
     public float changeInputT;
 
-
+    // Load Map when start game, move map
     public void LoadMap(string mapId)
     {
+        // Map object instantiate
         GameObject go = GameManager.InstantiateAsync("Map_"+mapId);
         currentMap = go.GetComponent<Map>();
         currentMap.CreateHandler();
+
+        // game Progress update
         GameManager.Progress.saveMapId = mapId;
+
+        // Camera background update
         GameManager.CameraManager.background = go.GetComponent<Map>().bound;
 
-        GameManager.Stage.currentMap = go.GetComponent<Map>();
 
         // Set Map Trigger Text Datas
         currentMapTrigTexts = GameManager.Script.getMapTrigTextData(mapId);
@@ -50,7 +54,7 @@ public class StageController
         }
 
 
-        // Set Map NPC Text Datas (add later)
+        // Set Map NPC Text Datas
         currentMapNPCTexts = GameManager.Script.getMapScriptsData(mapId);
         currentNPCs = new();
         currentNPCs = currentMap.NPCs;
@@ -94,7 +98,7 @@ public class StageController
             npc.SetScripts();
         }
     }
-
+    
     public void RefreshNPCScript()
     {
         foreach (var npc in currentMap.NPCs)

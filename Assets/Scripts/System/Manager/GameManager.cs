@@ -56,11 +56,7 @@ public class GameManager : MonoBehaviour
 
 
     public static GameObject player;
-    [SerializeField]
-    GameObject playerObj;
 
-    [SerializeField]
-    ScriptManager script;
 
     public static UIState uistate;
 
@@ -100,13 +96,15 @@ public class GameManager : MonoBehaviour
             _cameraManager = cm;
         }
 
+        // Create new gameProgress
         _gameProgress = new();
         _gameProgress.activateJunctions = new();
         _gameProgress.activeTrigs = new();
 
-        script = Script;
-
+        // Set Resolution windows FHD
         Screen.SetResolution(1920, 1080, false);
+
+        // Move First Map
         await Scene.MoveMap("20001010", "30001011");
     }
 
@@ -120,12 +118,12 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
+        // Find Camera Manager
         if (_cameraManager == null)
         {
             CameraManager cm = GameObject.Find("Main Camera").GetComponent<CameraManager>();
             _cameraManager = cm;
         }
-        playerObj = player;
         ManagerUpdate();
     }
 
@@ -134,42 +132,40 @@ public class GameManager : MonoBehaviour
         UIManager.Update();
     }
 
+    // Player Object Spawn
     public static void CharactorSpawn(Transform transform)
     {
-        Vector3 tmp = transform.position;
 
-        var awaitObj = InstantiateAsync("Player");
+        // Instantiate Player Object and Position Set
+        var awaitObj = InstantiateAsync("Player", transform.position);
         player = awaitObj;
-        player.transform.position = tmp;
+
         player.GetComponent<PlayerController>().controlEnabled = true;
 
-
-
+        // camera target is player object
         CameraManager.player = player.transform;
     }
 
-
+    // Instantiate Game Object with Addressables path
     public static GameObject InstantiateAsync(string path, Vector3 pos = default, Quaternion rotation = default)
     {
         return Resource.InstantiateAsync(path, pos, rotation);
     }
 
+    // return UI State
     public static UIState GetUIState()
     {
         return uistate;
     }
 
+    // change UI State
     public static void ChangeUIState(UIState state)
     {
         uistate = state;
     }
-    public static void CharactorSpawnStartGame()
-    {
-        Transform pos = GameObject.Find("SpawnPoint").GetComponent<Transform>();
-        CharactorSpawn(pos);
-        player.GetComponent<PlayerController>().canMove = true;
-    }
 
+
+    // Spawn Player Object In move map loading
     public static void CharactorSpawnInLoad(string doorId)
     {
         Door go = FindObjectsOfType<GameObject>().FirstOrDefault(go => go.GetComponent<Door>() != null && go.GetComponent<Door>().id == doorId).GetComponent<Door>();

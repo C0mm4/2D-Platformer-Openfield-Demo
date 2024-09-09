@@ -14,20 +14,11 @@ public abstract class Trigger : MonoBehaviour
 
     public TriggerData data;
 
-    public int SelectIndex;
-
     public TrigText trigText;
-
-    public List<string> nextTriggerId;
-    public List<Trigger> nextTrigger;
-
-    public List<GameObject> conditionObjs;
-    public List<GameObject> spawnObjs;
 
 
     [Serializable]
-
-    class AdditionalCondi
+    class AdditionalCondi   // Additional Condition Class
     {
         [SerializeField]
         enum condiType
@@ -52,10 +43,12 @@ public abstract class Trigger : MonoBehaviour
                 case condiType.None: return true;
                 case condiType.Junction: return CheckJunction();
                 // Add More Condition Return
+
+
                 default: return true;
             }
         }
-
+        // Type is Junction, Check junctions
         private bool CheckJunction()
         {
             foreach(string junction in junctionNodes)
@@ -76,8 +69,6 @@ public abstract class Trigger : MonoBehaviour
         triggerBox = GetComponent<Collider2D>();
         triggerBox.isTrigger = true;
         data.isActivate = false;
-        conditionObjs = new();
-        spawnObjs = new();
         if (GameManager.Progress.activeTrigs.ContainsKey(data.id))
         {
             data.isActivate = true;
